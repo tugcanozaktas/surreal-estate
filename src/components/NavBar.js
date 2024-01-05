@@ -1,6 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "../styles/NavBar.css";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -13,10 +13,14 @@ function NavBar() {
       <h2 className="title">Surreal Estate</h2>
       <ul className="navbar-links">
         <li className="navbar-links-item">
-          <a href="#">View Properties</a>
+          <Link className="item" to="/properties">
+            View Properties
+          </Link>
         </li>
         <li className="navbar-links-item">
-          <a href="#">Add a Property</a>
+          <Link className="item" to="/add-property">
+            Add a Property
+          </Link>
         </li>
       </ul>
     </div>
