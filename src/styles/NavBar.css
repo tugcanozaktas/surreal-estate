@@ -1,0 +1,32 @@
+.navbar{
+  background-color: white;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.house-logo{
+    max-width: 30px;
+}
+
+.title{
+    font-size: 20px;
+}
+.navbar-links{
+  list-style: none;
+  margin-left: 50px;
+  padding: 0;
+}
+.navbar-links-item{
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px;
+}
+.navbar-links-item a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
