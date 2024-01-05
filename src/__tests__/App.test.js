@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import App from '../components/App';
+import { render, screen } from "@testing-library/react";
+import React from "react";
+import App from "../components/App";
 
-test('renders surreal estate title', () => {
+test("renders surreal estate title", () => {
   render(<App />);
   const title = screen.getByText(/Surreal Estate/i);
   expect(title).toBeInTheDocument();
