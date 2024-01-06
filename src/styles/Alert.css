@@ -1,0 +1,14 @@
+.Alert{
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+}
+.alert-success{
+    background-color: rgba(105, 194, 105, 0.678);
+    border: 1px solid green;
+}
+.alert-error{
+    background-color: rgba(221, 25, 25, 0.784);
+    border: 1px solid rgb(128, 0, 0);
+}

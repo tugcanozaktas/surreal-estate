@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
 import postListing from "../requests/postListing";
+import Alert from "./Alert";
 
 function AddProperty() {
   const initialState = {
@@ -14,13 +15,18 @@ function AddProperty() {
       city: "Manchester",
       email: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-    postListing(fields);
+    postListing(fields, setAlert);
   };
   const handleFieldChange = (event) => {
     const changedField = event.target.name;
@@ -30,6 +36,7 @@ function AddProperty() {
 
   return (
     <div className="AddProperty">
+      <Alert message={alert.message} success={alert.isSuccess} />
       <form onSubmit={handleAddProperty}>
         <label htmlFor="title">
           Title
