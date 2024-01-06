@@ -1,16 +1,17 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
+import postListing from "../requests/postListing";
 
 function AddProperty() {
   const initialState = {
     fields: {
       title: "",
-      city: "Manchester",
       type: "Flat",
       bedrooms: "",
       bathrooms: "",
       price: "",
+      city: "Manchester",
       email: "",
     },
   };
@@ -19,7 +20,7 @@ function AddProperty() {
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(fields);
+    postListing(fields);
   };
   const handleFieldChange = (event) => {
     const changedField = event.target.name;
