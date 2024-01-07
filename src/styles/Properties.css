@@ -1,0 +1,8 @@
+.properties-box{
+    margin-left: 15px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 570px 570px 570px;
+    grid-column-gap: 0px;
+    grid-row-gap: 30px;
+}

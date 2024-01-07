@@ -41,6 +41,7 @@ function AddProperty() {
         <label htmlFor="title">
           Title
           <input
+            required
             placeholder="Luxury Apartment..."
             type="text"
             id="title"
@@ -52,6 +53,7 @@ function AddProperty() {
         <label htmlFor="city">
           City
           <select
+            required
             id="city"
             name="city"
             value={fields.city}
@@ -66,6 +68,7 @@ function AddProperty() {
         <label htmlFor="type">
           Type
           <select
+            required
             id="type"
             name="type"
             value={fields.type}
@@ -83,6 +86,7 @@ function AddProperty() {
         <label htmlFor="bedrooms">
           Bedrooms
           <input
+            required
             placeholder="3"
             type="number"
             min="0"
@@ -95,6 +99,7 @@ function AddProperty() {
         <label htmlFor="bathrooms">
           Bathrooms
           <input
+            required
             placeholder="1"
             type="number"
             min="0"
@@ -107,6 +112,7 @@ function AddProperty() {
         <label htmlFor="price">
           Price(£)
           <input
+            required
             placeholder="123456"
             type="number"
             min="0"
@@ -119,6 +125,7 @@ function AddProperty() {
         <label htmlFor="email">
           Email
           <input
+            required
             placeholder="john.smith@email.co.uk"
             type="email"
             id="email"
