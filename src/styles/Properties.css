@@ -2,7 +2,7 @@
     margin-left: 15px;
     padding: 10px;
     display: grid;
-    grid-template-columns: 450px 450px 450px;
+    grid-template-columns: 400px 400px 400px;
     grid-column-gap: 0px;
     grid-row-gap: 30px;
 }
@@ -19,7 +19,6 @@
     height: 100%;
 }
 .cities{
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -46,4 +45,24 @@
     color: black;
     margin-left: 10px;
     height: 50px;
+}
+.searchbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.searchbar form input{
+    padding: 0px 0px;
+    border: 1px solid black;
+    border-right: 0;
+    height: 26px;
+    font-size: 15px;
+}
+.searchbar form button{
+    padding: 6px;
+    border: 1px solid black;
+    height: 28px;
+    background-color: rgb(255, 3, 192);
 }

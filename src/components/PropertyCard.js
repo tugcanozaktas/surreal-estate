@@ -2,7 +2,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../styles/PropertyCard.css";
-// eslint-disable-next-line no-unused-vars
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBed,
