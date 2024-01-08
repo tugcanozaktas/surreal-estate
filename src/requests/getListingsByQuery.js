@@ -2,10 +2,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import axios from "axios";
 
-const getListings = (setListings) => {
-  const url = `http://localhost:4000/api/v1/PropertyListing`;
+const getListingsByQuery = (setListings, search) => {
+  let url = `http://localhost:4000/api/v1/PropertyListing`;
 
-  console.log(url);
+  if (search) {
+    url = `http://localhost:4000/api/v1/PropertyListing${search}`;
+  }
+
   axios
     .get(url)
     .then((response) => {
@@ -22,4 +25,4 @@ const getListings = (setListings) => {
     });
 };
 
-export default getListings;
+export default getListingsByQuery;
