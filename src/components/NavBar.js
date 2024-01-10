@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import FacebookLogin from "react-facebook-login";
 import PropTypes from "prop-types";
 
-function NavBar({ onLogin, userId, onLogout }) {
+function NavBar({ onLogin, userName, userId, onLogout }) {
   return (
     <div className="navbar">
       <img
@@ -27,9 +27,19 @@ function NavBar({ onLogin, userId, onLogout }) {
         </li>
       </ul>
       {userId ? (
-        <button className="signout" type="button" onClick={onLogout}>
-          Sign Out
-        </button>
+        <div className="user-section">
+          <button className="signout" type="button" onClick={onLogout}>
+            Sign Out
+          </button>
+          <div className="info-user">
+            <h2 className="name">{userName}</h2>
+            <img
+              alt="profile-pic"
+              className="photo"
+              src={`https://graph.facebook.com/${userId}/picture?type=normal`}
+            />
+          </div>
+        </div>
       ) : (
         <FacebookLogin
           appId="7463688096996643"
@@ -46,6 +56,7 @@ NavBar.propTypes = {
   onLogin: PropTypes.func.isRequired,
   userId: PropTypes.string.isRequired,
   onLogout: PropTypes.func.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 
 export default NavBar;

@@ -7,7 +7,13 @@ import AddProperty from "./AddProperty";
 
 function App() {
   const [userId, setUserId] = useState("");
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+
   const handleLogin = (response) => {
+    console.log(response);
+    setUserEmail(response.email);
+    setUserName(response.name);
     setUserId(response.id);
   };
   const handleLogout = () => {
@@ -16,7 +22,13 @@ function App() {
   };
   return (
     <div className="App">
-      <NavBar onLogin={handleLogin} userId={userId} onLogout={handleLogout} />
+      <NavBar
+        onLogin={handleLogin}
+        userId={userId}
+        userName={userName}
+        userEmail={userEmail}
+        onLogout={handleLogout}
+      />
       <Routes>
         <Route path="/properties" element={<Properties />} />
         <Route path="/add-property" element={<AddProperty />} />
