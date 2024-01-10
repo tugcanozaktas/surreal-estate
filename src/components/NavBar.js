@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import "../styles/NavBar.css";
 import { Link } from "react-router-dom";
@@ -18,6 +17,11 @@ function NavBar({ onLogin, userName, userId, onLogout }) {
         <li className="navbar-links-item">
           <Link className="item" to="/properties">
             View Properties
+          </Link>
+        </li>
+        <li className="navbar-links-item">
+          <Link className="item" to="/saved-properties">
+            Saved Properties
           </Link>
         </li>
         <li className="navbar-links-item">

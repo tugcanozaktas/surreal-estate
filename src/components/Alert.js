@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import "../styles/Alert.css";
 import PropTypes from "prop-types";

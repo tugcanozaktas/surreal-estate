@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import PropTypes from "prop-types";
 import "../styles/PropertyCard.css";
@@ -10,7 +9,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
-function PropertyCard({ data }) {
+function PropertyCard({ onSaveProperty, data, userId }) {
   return (
     <div className="property-card">
       <div className="property-card__image">
@@ -44,6 +43,15 @@ function PropertyCard({ data }) {
       <a href={`mailto:${data.email}`} className="property-card__email">
         <FontAwesomeIcon icon={faEnvelope} /> E-mail
       </a>
+      {userId && (
+        <button
+          onClick={() => onSaveProperty(data._id)}
+          className="favourites-button"
+          type="button"
+        >
+          Save
+        </button>
+      )}
     </div>
   );
 }
@@ -52,6 +60,7 @@ export default PropertyCard;
 
 PropertyCard.propTypes = {
   data: PropTypes.shape({
+    _id: PropTypes.string,
     title: PropTypes.string,
     type: PropTypes.string,
     bathrooms: PropTypes.number,
@@ -60,4 +69,6 @@ PropertyCard.propTypes = {
     city: PropTypes.string,
     email: PropTypes.string,
   }).isRequired,
+  userId: PropTypes.string.isRequired,
+  onSaveProperty: PropTypes.func.isRequired,
 };

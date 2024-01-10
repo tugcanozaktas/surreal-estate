@@ -1,14 +1,14 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import PropertyCard from "./PropertyCard";
-import getListings from "../requests/getListings";
 import Alert from "./Alert";
 import getListingsByQuery from "../requests/getListingsByQuery";
 import SideBar from "./SideBar";
+import postFavourite from "../requests/postFavourite";
 import "../styles/Properties.css";
 
-function Properties() {
+function Properties({ userId }) {
   const initialState = {
     listings: [],
     alert: {
@@ -20,7 +20,9 @@ function Properties() {
   const [alert, setAlert] = useState(initialState.alert);
 
   const { search } = useLocation();
-
+  const handleSaveProperty = (propertyId) => {
+    postFavourite(userId, propertyId);
+  };
   useEffect(() => {
     setAlert({ message: "", isSuccess: false });
     getListingsByQuery(setListings, search, setAlert);
@@ -35,7 +37,12 @@ function Properties() {
       <div className="properties-box">
         <Alert message={alert.message} success={alert.isSuccess} />
         {listings.map((listing) => (
-          <PropertyCard key={listing._id} data={listing} />
+          <PropertyCard
+            onSaveProperty={handleSaveProperty}
+            userId={userId}
+            key={listing._id}
+            data={listing}
+          />
         ))}
       </div>
       <SideBar className="sidebar" />
@@ -44,3 +51,7 @@ function Properties() {
 }
 
 export default Properties;
+
+Properties.propTypes = {
+  userId: PropTypes.string.isRequired,
+};
