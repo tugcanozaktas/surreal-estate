@@ -8,9 +8,11 @@ import deleteFavouriteById from "../requests/deleteFavouriteById";
 
 function Favourites({ userId }) {
   const [favourites, setFavourites] = useState([]);
+
   useEffect(() => {
-    getFavourites(setFavourites);
+    getFavourites(userId, setFavourites);
   }, []);
+
   const handleDelete = (id) => {
     deleteFavouriteById(id);
   };

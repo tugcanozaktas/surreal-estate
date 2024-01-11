@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "../styles/PropertyCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,8 +8,13 @@ import {
   faSterlingSign,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
+import checkFavouriteExists from "../requests/checkFavouriteExists";
 
 function PropertyCard({ onSaveProperty, data, userId }) {
+  const [isFavourite, setIsFaviorite] = useState();
+  useEffect(() => {
+    checkFavouriteExists(userId, data._id, setIsFaviorite);
+  });
   return (
     <div className="property-card">
       <div className="property-card__image">
@@ -43,15 +48,27 @@ function PropertyCard({ onSaveProperty, data, userId }) {
       <a href={`mailto:${data.email}`} className="property-card__email">
         <FontAwesomeIcon icon={faEnvelope} /> E-mail
       </a>
-      {userId && (
-        <button
-          onClick={() => onSaveProperty(data._id)}
-          className="favourites-button"
-          type="button"
-        >
-          Save
-        </button>
-      )}
+      {(() => {
+        if (userId && !isFavourite) {
+          return (
+            <button
+              onClick={() => onSaveProperty(data._id)}
+              className="favourites-button"
+              type="button"
+            >
+              Save
+            </button>
+          );
+        }
+        if (userId && isFavourite) {
+          return (
+            <button type="button" className="unsave-button">
+              Saved
+            </button>
+          );
+        }
+        return null;
+      })()}
     </div>
   );
 }
