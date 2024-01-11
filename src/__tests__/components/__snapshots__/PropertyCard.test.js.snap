@@ -119,6 +119,12 @@ exports[`renders everything correctly 1`] = `
       </svg>
        E-mail
     </a>
+    <button
+      class="favourites-button"
+      type="button"
+    >
+      Save
+    </button>
   </div>
 </DocumentFragment>
 `;

@@ -2,12 +2,19 @@ import React from "react";
 import { render } from "@testing-library/react";
 import PropertyCard from "../../components/PropertyCard";
 
+const onSaveProperty = () => {};
+const userId = "123456";
 test("renders correct title", () => {
   const data = {
     title: "Manchester Apt",
   };
-
-  const { getByText } = render(<PropertyCard data={data} />);
+  const { getByText } = render(
+    <PropertyCard
+      data={data}
+      onSaveProperty={onSaveProperty}
+      userId={userId}
+    />,
+  );
 
   expect(getByText(/Manchester/).textContent).toBe("Manchester Apt");
 });
@@ -17,7 +24,13 @@ test("renders correct type", () => {
     type: "Flat",
   };
 
-  const { getByText } = render(<PropertyCard data={data} />);
+  const { getByText } = render(
+    <PropertyCard
+      data={data}
+      onSaveProperty={onSaveProperty}
+      userId={userId}
+    />,
+  );
 
   expect(getByText(/Flat/).textContent).toBe("Flat");
 });
@@ -27,7 +40,13 @@ test("renders correct bathroom number", () => {
     bathrooms: 1,
   };
 
-  const { getByText } = render(<PropertyCard data={data} />);
+  const { getByText } = render(
+    <PropertyCard
+      data={data}
+      onSaveProperty={onSaveProperty}
+      userId={userId}
+    />,
+  );
 
   expect(getByText(/1/).textContent).toBe("1");
 });
@@ -37,7 +56,13 @@ test("renders correct bedroom number", () => {
     bedrooms: 3,
   };
 
-  const { getByText } = render(<PropertyCard data={data} />);
+  const { getByText } = render(
+    <PropertyCard
+      data={data}
+      onSaveProperty={onSaveProperty}
+      userId={userId}
+    />,
+  );
 
   expect(getByText(/3/).textContent).toBe("3");
 });
@@ -47,7 +72,13 @@ test("renders correct price", () => {
     price: 15000,
   };
 
-  const { getByText } = render(<PropertyCard data={data} />);
+  const { getByText } = render(
+    <PropertyCard
+      data={data}
+      onSaveProperty={onSaveProperty}
+      userId={userId}
+    />,
+  );
 
   expect(getByText(/15000/).textContent).toBe("15000");
 });
@@ -57,7 +88,13 @@ test("renders correct city", () => {
     city: "Manchester",
   };
 
-  const { getByText } = render(<PropertyCard data={data} />);
+  const { getByText } = render(
+    <PropertyCard
+      data={data}
+      onSaveProperty={onSaveProperty}
+      userId={userId}
+    />,
+  );
 
   expect(getByText(/Manchester/).textContent).toBe("Manchester");
 });
@@ -67,7 +104,13 @@ test("email link has correct href value", () => {
     email: "tugcanozaktas51@gmail.com",
   };
 
-  const { getByText } = render(<PropertyCard data={data} />);
+  const { getByText } = render(
+    <PropertyCard
+      data={data}
+      onSaveProperty={onSaveProperty}
+      userId={userId}
+    />,
+  );
 
   const emailLink = getByText(/E-mail/);
 
@@ -85,7 +128,13 @@ test("renders everything correctly", () => {
     email: "tugcanozaktas51@gmail.com",
   };
 
-  const { asFragment } = render(<PropertyCard data={data} />);
+  const { asFragment } = render(
+    <PropertyCard
+      data={data}
+      onSaveProperty={onSaveProperty}
+      userId={userId}
+    />,
+  );
 
   expect(asFragment()).toMatchSnapshot();
 });
