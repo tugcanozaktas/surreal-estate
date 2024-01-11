@@ -36,12 +36,13 @@ function Properties({ userId }) {
     <div className="properties">
       <div className="properties-box">
         <Alert message={alert.message} success={alert.isSuccess} />
-        {listings.map((listing) => (
+        {listings.map((listing, index) => (
           <PropertyCard
             onSaveProperty={handleSaveProperty}
             userId={userId}
             key={listing._id}
             data={listing}
+            index={index}
           />
         ))}
       </div>

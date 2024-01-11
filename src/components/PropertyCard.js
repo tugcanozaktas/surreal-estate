@@ -7,18 +7,36 @@ import {
   faBath,
   faSterlingSign,
   faEnvelope,
+  faStar,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import checkFavouriteExists from "../requests/checkFavouriteExists";
 
-function PropertyCard({ onSaveProperty, data, userId }) {
+function PropertyCard({ onSaveProperty, data, userId, index }) {
   const [isFavourite, setIsFavourite] = useState();
+  const [isSaved, setIsSaved] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     checkFavouriteExists(userId, data._id, setIsFavourite);
   });
 
+  useEffect(() => {
+    // Set isMounted to true after a delay based on the card's index
+    const timeoutId = setTimeout(() => {
+      setIsMounted(true);
+    }, 150 * index);
+
+    return () => clearTimeout(timeoutId);
+  }, [index]);
+
+  const handleSaveClick = () => {
+    onSaveProperty(data._id);
+    setIsSaved(true);
+  };
+
   return (
-    <div className="property-card">
+    <div className={`property-card ${isMounted ? "fade-in" : ""}`}>
       <div className="property-card__image">
         <img
           className="house-logo"
@@ -54,20 +72,22 @@ function PropertyCard({ onSaveProperty, data, userId }) {
         if (userId && !isFavourite) {
           return (
             <button
-              onClick={() => {
-                onSaveProperty(data._id);
-                setIsFavourite(true);
-              }}
-              className="favourites-button"
+              onClick={handleSaveClick}
+              className={`favourites-button ${isSaved ? "fade-out" : ""}`}
               type="button"
             >
+              <FontAwesomeIcon icon={faStar} />
               Save
             </button>
           );
         }
         if (userId && isFavourite) {
           return (
-            <button type="button" className="saved-button">
+            <button
+              type="button"
+              className={`saved-button ${isSaved ? "fade-in" : ""}`}
+            >
+              <FontAwesomeIcon icon={faCheck} />
               Saved
             </button>
           );
@@ -93,4 +113,5 @@ PropertyCard.propTypes = {
   }).isRequired,
   userId: PropTypes.string.isRequired,
   onSaveProperty: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
 };

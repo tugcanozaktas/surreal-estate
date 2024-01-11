@@ -11,7 +11,12 @@ box-shadow: 0px 0px 24px -7px rgba(0,0,0,0.75);
     padding: 10px;
     width: 450px;
     height: 500px;
+    opacity: 0;
+    transition:opacity 0.2s ease-in-out;
 }
+.property-card.fade-in {
+    opacity: 1;
+  }
 .property-card__type-city i{
     display: flex;
 }
@@ -69,4 +74,14 @@ box-shadow: 0px 0px 24px -7px rgba(0,0,0,0.75);
     background-color: rgb(255, 72, 0);
     color: white;
     text-decoration: none;
+}
+.favourites-button,
+.saved-button {
+    transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.favourites-button.fade-out,
+.saved-button.fade-in {
+    background-color: rgb(255, 72, 0);
+    opacity: 1;
 }
