@@ -13,8 +13,9 @@ function Favourites({ userId }) {
     getFavourites(userId, setFavourites);
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDelete = (id, setIsDelete) => {
     deleteFavouriteById(id);
+    setIsDelete(true);
   };
   return (
     <div>

@@ -11,10 +11,12 @@ import {
 import checkFavouriteExists from "../requests/checkFavouriteExists";
 
 function PropertyCard({ onSaveProperty, data, userId }) {
-  const [isFavourite, setIsFaviorite] = useState();
+  const [isFavourite, setIsFavourite] = useState();
+
   useEffect(() => {
-    checkFavouriteExists(userId, data._id, setIsFaviorite);
+    checkFavouriteExists(userId, data._id, setIsFavourite);
   });
+
   return (
     <div className="property-card">
       <div className="property-card__image">
@@ -52,7 +54,10 @@ function PropertyCard({ onSaveProperty, data, userId }) {
         if (userId && !isFavourite) {
           return (
             <button
-              onClick={() => onSaveProperty(data._id)}
+              onClick={() => {
+                onSaveProperty(data._id);
+                setIsFavourite(true);
+              }}
               className="favourites-button"
               type="button"
             >
@@ -62,7 +67,7 @@ function PropertyCard({ onSaveProperty, data, userId }) {
         }
         if (userId && isFavourite) {
           return (
-            <button type="button" className="unsave-button">
+            <button type="button" className="saved-button">
               Saved
             </button>
           );
