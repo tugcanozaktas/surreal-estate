@@ -15,11 +15,11 @@ Before you begin, ensure you have the following installed:
 ## Installation
 1. Clone the repository:
 
-   ### git clone https://github.com/your-username/surreal-estate.git
+   ```git clone https://github.com/your-username/surreal-estate.git```
 
 2. Run the App:
 
-    ### npm start
+    ```npm start```
 
     This will start the project on [http://localhost:3000]
 
@@ -29,6 +29,6 @@ Before you begin, ensure you have the following installed:
 
 3. Test the App:
 
-    ### npm test
+   ```npm test```
 
     This should run 2 tests and pass.
