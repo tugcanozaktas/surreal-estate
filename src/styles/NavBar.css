@@ -10,7 +10,11 @@
 .house-logo{
     max-width: 30px;
 }
-
+.logo-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .title{
     font-size: 20px;
 }
@@ -30,3 +34,24 @@
     text-decoration: none;
     color: black;
   }
+  .signout{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    background-color: #4c69ba;
+    border: calc(0.06887vw + 0.67769px) solid #4c69ba;
+    color: white
+}
+.user-section{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.info-user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.photo{
+    width: 50px; 
+}

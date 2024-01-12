@@ -2,7 +2,7 @@
     margin-left: 15px;
     padding: 10px;
     display: grid;
-    grid-template-columns: 600px 600px 600px;
+    grid-template-columns: 520px 520px 520px;
     grid-column-gap: 0px;
     grid-row-gap: 30px;
 }
@@ -70,25 +70,4 @@
     height: 50px;
     width: 50px;
     background-color: rgb(255, 3, 192);
-}
-.signout{
-    width: 200px;
-    height: 50px;
-    font-size: 20px;
-    background-color: #4c69ba;
-    border: calc(0.06887vw + 0.67769px) solid #4c69ba;
-    color: white
-}
-.user-section{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-.info-user{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.photo{
-    width: 50px; 
 }

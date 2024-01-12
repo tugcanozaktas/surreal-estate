@@ -7,12 +7,14 @@ import PropTypes from "prop-types";
 function NavBar({ onLogin, userName, userId, onLogout }) {
   return (
     <div className="navbar">
-      <img
-        className="house-logo"
-        src="https://cdn-icons-png.flaticon.com/512/10751/10751558.png"
-        alt="house-logo"
-      />
-      <h2 className="title">Surreal Estate</h2>
+      <div className="logo-title">
+        <img
+          className="house-logo"
+          src="https://cdn-icons-png.flaticon.com/512/10751/10751558.png"
+          alt="house-logo"
+        />
+        <h2 className="title">Surreal Estate</h2>
+      </div>
       <ul className="navbar-links">
         <li className="navbar-links-item">
           <Link className="item" to="/properties">

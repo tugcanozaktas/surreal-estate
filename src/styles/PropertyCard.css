@@ -62,6 +62,7 @@ box-shadow: 0px 0px 24px -7px rgba(0,0,0,0.75);
     background-color: rgb(19, 188, 50);
     color: white;
     text-decoration: none;
+    border: 0;
 }
 .saved-button{
     height: 40px;
@@ -74,6 +75,7 @@ box-shadow: 0px 0px 24px -7px rgba(0,0,0,0.75);
     background-color: rgb(255, 72, 0);
     color: white;
     text-decoration: none;
+    border: 0;
 }
 .favourites-button,
 .saved-button {
