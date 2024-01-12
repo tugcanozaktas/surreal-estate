@@ -23,7 +23,7 @@ Before you begin, ensure you have the following installed:
 
     This will start the project on [http://localhost:3000]
 
-    ### HTTPS=true npm start
+    ```HTTPS=true npm start```
 
     This will start the project on [https://localhost:3000]
 
