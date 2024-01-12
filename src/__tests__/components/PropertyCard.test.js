@@ -13,6 +13,7 @@ test("renders correct title", () => {
       data={data}
       onSaveProperty={onSaveProperty}
       userId={userId}
+      index={1}
     />,
   );
 
@@ -29,6 +30,7 @@ test("renders correct type", () => {
       data={data}
       onSaveProperty={onSaveProperty}
       userId={userId}
+      index={1}
     />,
   );
 
@@ -45,6 +47,7 @@ test("renders correct bathroom number", () => {
       data={data}
       onSaveProperty={onSaveProperty}
       userId={userId}
+      index={1}
     />,
   );
 
@@ -61,6 +64,7 @@ test("renders correct bedroom number", () => {
       data={data}
       onSaveProperty={onSaveProperty}
       userId={userId}
+      index={1}
     />,
   );
 
@@ -77,6 +81,7 @@ test("renders correct price", () => {
       data={data}
       onSaveProperty={onSaveProperty}
       userId={userId}
+      index={1}
     />,
   );
 
@@ -93,6 +98,7 @@ test("renders correct city", () => {
       data={data}
       onSaveProperty={onSaveProperty}
       userId={userId}
+      index={1}
     />,
   );
 
@@ -109,6 +115,7 @@ test("email link has correct href value", () => {
       data={data}
       onSaveProperty={onSaveProperty}
       userId={userId}
+      index={1}
     />,
   );
 
@@ -133,6 +140,7 @@ test("renders everything correctly", () => {
       data={data}
       onSaveProperty={onSaveProperty}
       userId={userId}
+      index={1}
     />,
   );
 
